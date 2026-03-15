@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dream Day</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script>
+        //Object
+        var pic = [
+            { "id": "1", "im": "<img src='1.jpeg' class='img'>", "des": "The Day (12-02-26) I was waiting for you with imapatiently.😃" },
+            { "id": "2", "im": "<img src='2.jpeg' class='img'>", "des": "And Finally, You Got There!<br>And called me.👋" },
+            { "id": "3", "im": "<img src='3.jpeg' class='img'>", "des": "Then I saw you!😊" },
+            { "id": "4", "im": "<img src='4.jpeg' class='img1'>", "des": "And we were face to face with each other.😍" },
+            { "id": "5", "im": "<img src='5.jpeg' class='img'>", "des": "As if evrything paused for few seconds at that moment, and there was a strange silence all around.🥰" },
+            { "id": "6", "im": "<img src='6.jpeg' class='img'>", "des": "Then we went and sat and talked while spending time together.🤗" },
+            { "id": "7", "im": "<img src='7.jpeg' class='img'>", "des": "Then you gave me your Earphones so we could listen to the song.🎶" },
+            { "id": "8", "im": "<img src='8.jpeg' class='img'>", "des": "And then we came outside to go to the Park.🍂" },
+            { "id": "9", "im": "<img src='9.jpeg' class='img'>", "des": "And you moved me to the left side.🫡" },
+            { "id": "10", "im": "<img src='10.jpeg' class='img'>", "des": "Then we walked together again.❣️" },
+            { "id": "11", "im": "<img src='11.jpeg' class='img'>", "des": "And finally went to the Park.😊" },
+            { "id": "12", "im": "<img src='20.jpeg' class='img'>", "des": "Then we walked around the park for a while.🫠" },
+            { "id": "12", "im": "<img src='12.jpeg' class='img'>", "des": "And then we took some pics.📸" },
+            { "id": "12", "im": "<img src='13.jpeg' class='img'>", "des": "📸" },
+            { "id": "12", "im": "<img src='14.jpeg' class='img'>", "des": "📸<br>(Photo khichvate hue bhi itne nakhre karte ho...🤨)" },
+            { "id": "12", "im": "<img src='15.jpeg' class='img'>", "des": "📸" },
+            { "id": "12", "im": "<img src='16.jpeg' class='img'>", "des": "Then after all this, we came back outside because it was time for you to leave.😕" },
+            { "id": "12", "im": "<img src='17.jpeg' class='img'>", "des": "And Drank Juice.🥤" },
+            { "id": "12", "im": "<img src='18.jpeg' class='img'>", "des": "Then.................😶‍🌫️" },
+            { "id": "12", "im": "<img src='19.jpeg' class='img'>", "des": "Thank You 🩷" }
+        ]
+        var nm
+        var pass
+        var x = 0
+        //Slide
+        function getSlide() {
+            nm = document.getElementById("n") ? document.getElementById("n").value : "Suddhu"
+            pass = document.getElementById("p") ? document.getElementById("p").value : "04-08-02"
+
+            if (nm == "" || pass == "") {
+                valid1()
+                valid2()
+                return
+            }
+
+            if (nm != "Suddhu" || pass != "04-08-02") {
+                alert("Please enter your name and your dob as a password sir!")
+                return
+            }
+
+            let slide = `
+                <h6 class="text-center">Agar kuch miss ho jaye to maaf karna!</h6>
+                <hr>
+                ${pic[x].im}
+                <hr>
+                <p class="text-center mt-3">${pic[x].des}</p> 
+                <hr>                       
+                <div class="d-flex gap-2">
+                <button class="btn m-2" onclick="prevSlide()">Prev</button>
+                <button class="btn m-2" onclick="nextSlide()">Next</button>
+                </div>
+            `
+            document.getElementById("tq").innerHTML = slide
+        }
+
+        //For next slide
+        function nextSlide() {
+            if (x < pic.length - 1) {
+                x++;
+                getSlide()
+            } else {
+                s = `
+                <center><p>Thank you Sir for giving me your valuable time. It really felt like a dream, and it was
+                     very wonderful. I have never ever imagined that something like this would actually happen.
+                     (Upar se same color ki dress pehni thi dono ne....)<br>Shayad sab kuch likhna mushkil hai or
+                      kaha mujhse jata nahi to apne hisab se laga lena. Gana mast tha vaise.....<br><br>
+                    <div class="row">
+                        <h4>Jyada ho gaya kya?</h4>
+                        <br>
+                        <div class="d-flex gap-2">
+                            <button class="btn m-2 btn-sm" onclick="btn1()">Haa, or nahi to kya</button>
+                            <button class="btn m-2 btn-sm" onclick="btn2()">Arey nahi itna to chalta hai</button>
+                            <button class="btn m-2 btn-sm" onclick="btn3()">Tum pagal ho gayi ho</button>
+                        </div>
+                    </div>
+                `
+                document.getElementById("tq").innerHTML = s
+            }
+        }
+
+        //For previous slide
+        function prevSlide() {
+
+            if (x > 0) {
+                x--
+                getSlide()
+            } else {
+                alert("Arey Maharaj ji pehli Slide hai ye!")
+            }
+
+        }
+
+        //Name validation
+        function valid1() {
+            nm = document.getElementById("n").value
+            if (nm == "") {
+                document.getElementById("un").innerHTML = " *Enter name"
+                document.getElementById("n").style.border = "2px solid red"
+            } else {
+                if (nm == "Suddhu") {
+                    document.getElementById("un").innerHTML = ""
+                    document.getElementById("n").style.border = "2px solid orange"
+                }
+            }
+        }
+
+        //Password Validation
+        function valid2() {
+            pass = document.getElementById("p").value
+            if (pass == "") {
+                document.getElementById("ps").innerHTML = " *Please Enter Password"
+                document.getElementById("p").style.border = "2px solid red"
+            } else {
+                if (pass == "04-08-02") {
+                    document.getElementById("ps").innerHTML = ""
+                    document.getElementById("p").style.border = "2px solid orange"
+                }
+            }
+        }
+
+        //Heart Animation
+        function createHeart() {
+            const heart = document.createElement("h5")
+            heart.classList.add("heart")
+            heart.innerHTML = "🧡"
+            heart.style.left = Math.random() * 100 + "vw"
+            heart.style.fontSize = Math.random() * 20 + 10 + "px"
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s"
+            document.querySelector(".heart-container").appendChild(heart)
+            setTimeout(() => {
+                heart.remove()
+            }, 5000)
+        }
+        setInterval(createHeart, 300)
+
+        //For main Music
+        function playMusic() {
+            document.getElementById("bgmusic").play()
+        }
+
+        //Last page Buttons
+        function btn1(){
+            stopMusic()
+            s=`
+            <center><h2>It,s Okay.<br>Be Happy (Busy Person)🥲</h2>
+                <br><br>
+            <audio id="music1" loop>
+                <source src="music1.mpeg" type="audio/mpeg">
+            </audio>
+            <div class="text-center">
+                <button onclick="playMusic1()" class="btn m-2 col-4">
+                    Song for you 🎵
+                </button>
+            </div>
+            </center>
+            <br><br><br>
+            `
+            document.getElementById("tq").innerHTML = s
+        }
+
+        function btn2(){
+            stopMusic()
+            s=`
+            <center><h2>Thik hai phir chalta hai to chalate raho.🙄 </h2>
+            <br><br>
+            <audio id="music2" loop>
+                <source src="music2.mpeg" type="audio/mpeg">
+            </audio>
+            <div class="text-center">
+                <button onclick="playMusic2()" class="btn m-2 col-4">
+                    Song for you 🎵
+                </button>
+            </div>
+            </center>
+            <br><br><br>
+            `
+            document.getElementById("tq").innerHTML = s
+        }
+
+        function btn3(){
+            stopMusic()
+            s=`
+            <center><h2>Aap hi ka asar hai, ab jhel lo bas.🙄</h2>
+            <br>
+            <br>
+            <audio id="music3" loop>
+                <source src="music3.mpeg" type="audio/mpeg">
+            </audio>
+            <div class="text-center">
+                <button onclick="playMusic3()" class="btn m-2 col-4">
+                    Song for you 🎵
+                </button>
+            </div>
+            </center>
+            <br><br><br>
+            `
+            document.getElementById("tq").innerHTML = s
+        }
+
+        //For Last page Music
+        function playMusic1() {
+            document.getElementById("music1").play()
+        }
+
+        function playMusic2() {
+            document.getElementById("music2").play()
+        }
+
+        function playMusic3() {
+            document.getElementById("music3").play()
+        }
+
+        //function for stop bgmusic
+        function stopMusic(){
+            const music=document.getElementById("bgmusic")
+            music.pause()
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="heart-container"></div>
+    <div class="container">
+        <br>
+        <center><audio id="bgmusic" loop>
+                <source src="rsm.mpeg" type="audio/mpeg">
+            </audio>
+            <div class="text-center">
+                <button onclick="playMusic()" class="btn m-2 col-4">
+                    Music 🎵
+                </button>
+            </div>
+        </center>
+        <br>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 shadow-lg login-form"
+                style="border-radius: 20px; text-align: center; padding: 30px; font-family: cursive; font-size: 15px;"
+                id="tq">
+                <hr>
+                <form><br>
+                    <div class="input-group">
+                        <input type="text" id="n" style="font-size: 13px;" placeholder="Enter your name"
+                            onblur="valid1()">
+                        <label>Your Name</label>
+                        <div class="row" id="un" style="color: rgb(247, 99, 99); font-size: 10px;"></div>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <input type="password" id="p" style="font-size: 13px;"
+                            placeholder="Password is your dob (ex:dd-mm-yy)" onblur="valid2()">
+                        <label>Password</label>
+                        <div class="row" id="ps" style="color: rgb(242, 93, 93); font-size: 10px;"></div>
+                    </div><br>
+                    <div class="button">
+                        <center>
+                            <button type="button" class="btn" onclick="getSlide()" style="font-size: 15px;">Please click
+                                me Sir!</button>
+                        </center>
+                    </div>
+                </form>
+                <br>
+                <div class="row" style="font-size: 10px; color: rgb(90, 88, 88);">
+                    <p style="font-size: 14px;"><b>Note: </b>After enter you will
+                        see something special. Please click on "Music" button too.<br>(Use Headphones for better Expirience)</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</body>
+
+</html>
